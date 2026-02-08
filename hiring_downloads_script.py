@@ -32,7 +32,7 @@ INDIA_HIRING_COMPLETED_SHEET = HIRING_QUEUE_PATH + r"\\automation-resume-downloa
 INDIA_HIRING_COMPLETED_SHEET = HIRING_QUEUE_PATH + r"\\final-automation.xlsm"
 CHROME_DRIVER_PATH = "C:\\Program Files (x86)\\chromedriver_win32\\chromedriver"
 WKHTML_PATH = "C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe"
-HR_LINKS_PORTAL_URL = r"http://grdhrdbwhq00.northamerica.cerner.net/ReportServer?/HR+Links+Portal/HR_Links_Portal&rs:Command=Render&rc:Toolbar=False"
+HR_LINKS_PORTAL_URL = r"http://grd.northamerica.xxx-cern-xxx.net/ReportServer?/HR+Links+Portal/HR_Links_Portal&rs:Command=Render&rc:Toolbar=False"
 #DOWNLOADS_DIR = r"C:\\Users\\KY047036\\Downloads"
 #DOWNLOADS_DIR = r"C:\\Users\\DS062683\\Downloads"
 DOWNLOADS_DIR = os.path.expanduser("~/Downloads")
@@ -500,23 +500,6 @@ def offer_accept_download(browser, row):
     accept_download_script_str = download_str(accept_pdf_raw_url)
     
     browser.execute_script(accept_download_script_str)
-    
-    
-    #browser.execute_script('''
-    #    //document.querySelector('body').hover();
-    #    //document.querySelector('#toolbar').shadowRoot.querySelector('#download').click();
-
-    #    frag = document.querySelector("print-preview-app").shadowRoot;
-    #    sidebar = frag.querySelector("#sidebar").shadowRoot;
-    #    dest = sidebar.querySelector("#destinationSettings").shadowRoot;
-    #    preview_set = dest.querySelector("print-preview-settings-section");
-    #    dest_select = preview_set.querySelector("print-preview-destination-select").shadowRoot;
-    #    //dest_select.querySelector("select").value;
-
-
-    #    dest_select.querySelector("select").value = "Save as PDF/local/";
-    #''')
-    
 
     print("==========================================Download AcceptanceLetter Logic Ends===================================================")
     
@@ -542,18 +525,6 @@ def ctc_download(browser, row):
     #ctc_link = browser.find_element_by_css_selector('')
     
     browser.execute_script("""
-        /*
-        var attachment_links = document.querySelectorAll('a.viewattachment');
-        for(var i = 0; i < attachment_links.length; i++){
-            var a_txt = attachment_links[i].innerText;
-            if(
-                (a_txt.toLowerCase().includes('ctc') || a_txt.toLowerCase().includes('breakup') || a_txt.toLowerCase().includes('grid')) && 
-                (a_txt.includes('pdf') || a_txt.includes('PDF'))){
-                    attachment_links[i].click();
-                    i = attachment_links.length;
-            }
-        }
-        */
         
         // GET THE CTC LETTER LINK
         var trs = document.querySelectorAll('div#attachmentsGrid .ui-grid-row ');
@@ -675,33 +646,6 @@ def download_all_docs():
 
     browser = webdriver.Chrome(CHROME_DRIVER_PATH, options=chrome_options)
 
-    # profs_dir = os.path.expanduser("~/AppData/Roaming/Mozilla/Firefox/Profiles")
-    # prof_found = max([os.path.join(profs_dir,d) for d in os.listdir(profs_dir)], key=os.path.getmtime)
-    # print(prof_found)
-    
-    # profile = webdriver.FirefoxProfile(prof_found)
-    # profile.set_preference('browser.download.folderList', 2) # custom location
-
-    # profile.set_preference('browser.download.manager.showWhenStarting', False)
-    # profile.set_preference('browser.download.dir', DOWNLOADS_DIR)
-    # profile.set_preference('browser.helperApps.neverAsk.saveToDisk', "application/pdf")
-    # caps = DesiredCapabilities.FIREFOX.copy()
-    # caps['marionette'] = False
-    # binary = FirefoxBinary(r'C:\\Program Files (x86)\\geckodriver-v0.26.0-win64\\geckodriver.exe')
-    # browser = webdriver.Firefox(firefox_binary=binary, caps)
-
-    
-    
-    # capabilities = webdriver.DesiredCapabilities().FIREFOX
-    # capabilities["marionette"] = True
-    # binary = FirefoxBinary('C:/Program Files/Mozilla Firefox/firefox.exe')
-    # browser = webdriver.Firefox(firefox_profile=profile, 
-                                # firefox_binary=binary, 
-                                # capabilities=capabilities, 
-                                # executable_path=r'C:\\Program Files (x86)\\geckodriver-v0.26.0-win64\\geckodriver.exe')
-    #driver.get("http://www.google.com")    
-    
-    
     browser.implicitly_wait(30) #wait 30 seconds when doing a find_element before carrying on
     #browser.delete_all_cookies()
     browser.get(HR_LINKS_PORTAL_URL)
