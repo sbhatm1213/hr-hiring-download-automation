@@ -27,16 +27,12 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
 HIRING_QUEUE_PATH = r"\\Cernfs05\functional\HR\HRSC\HIRING QUEUE\automation-resume-download\Python file"
-#HIRING_QUEUE_PATH = r"Z:\\HIRING QUEUE\automation-resume-download\Python file"
 INDIA_HIRING_COMPLETED_SHEET = HIRING_QUEUE_PATH + r"\\automation-resume-download.xlsm"
 INDIA_HIRING_COMPLETED_SHEET = HIRING_QUEUE_PATH + r"\\final-automation.xlsm"
 CHROME_DRIVER_PATH = "C:\\Program Files (x86)\\chromedriver_win32\\chromedriver"
 WKHTML_PATH = "C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe"
 HR_LINKS_PORTAL_URL = r"http://grd.northamerica.xxx-cern-xxx.net/ReportServer?/HR+Links+Portal/HR_Links_Portal&rs:Command=Render&rc:Toolbar=False"
-#DOWNLOADS_DIR = r"C:\\Users\\KY047036\\Downloads"
-#DOWNLOADS_DIR = r"C:\\Users\\DS062683\\Downloads"
 DOWNLOADS_DIR = os.path.expanduser("~/Downloads")
-#DOWNLOADS_COPY_TO_PATH = r"Z:\\HIRING QUEUE\automation-resume-download"
 RESUMES_DOWNLOADS_COPY_TO = HIRING_QUEUE_PATH + r"\automation_resumes"
 OFFERS_DOWNLOADS_COPY_TO = HIRING_QUEUE_PATH + r"\automation_offers"
 
