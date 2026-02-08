@@ -1,9 +1,9 @@
-# hr-hiring-download-automation
+### hr-hiring-download-automation
 
-# HR Operations
-# HRSC Document Download Automation
+### HR Operations
+### HRSC Document Download Automation
 
-## Overview
+### Overview
 
 Python + Selenium automation to download and organize hiring documents from an internal recruitment portal.
 
@@ -11,7 +11,7 @@ Built to eliminate manual work involved in collecting candidate onboarding docum
 
 ---
 
-## What it does
+### What it does
 
 * Reads hiring data from Excel
 * Searches candidates by Job Opening
@@ -28,13 +28,13 @@ Built to eliminate manual work involved in collecting candidate onboarding docum
 
 ---
 
-## Tech Stack
+### Tech Stack
 
 Python, Selenium, pandas, xlwings, PyPDF2, pdfkit
 
 ---
 
-## How to run
+### How to run
 
 1. Update file paths and ChromeDriver location in the script
 2. Install dependencies
@@ -46,7 +46,7 @@ python script.py
 
 ---
 
-## Notes
+### Notes
 
 * Designed for internal enterprise HR system
 * Requires portal access and shared drive permissions
